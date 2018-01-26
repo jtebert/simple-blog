@@ -1,0 +1,23 @@
+{
+  "name": "simple-blog",
+  "version": "0.1.0",
+  "description": "A simple blog",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jtebert/simple-blog.git"
+  },
+  "author": "Julia Ebert",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jtebert/simple-blog/issues"
+  },
+  "homepage": "https://github.com/jtebert/simple-blog#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-gh-pages": "^0.5.4"
+  }
+}
