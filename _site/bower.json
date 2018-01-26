@@ -1,0 +1,22 @@
+{
+  "name": "simple-blog",
+  "authors": [
+    "Julia Ebert <julia@juliaebert.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "juliaebert.com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "luminous": "^1.0.1",
+    "jquery": "^3.3.1"
+  }
+}
