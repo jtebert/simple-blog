@@ -1,0 +1,33 @@
+---
+layout: default
+---
+
+<div id="feature-block">
+    <div class="container">
+        <h1 class="title">{{ page.title }}</h1>
+        <p>
+            {{ page.date | date: "%Y %B %-d"}}
+            {% if page.author %}
+                &emsp;|&emsp;
+                {{ page.author }}
+            {% endif %}
+        </p>
+        {% if page.tags %}
+            <p>
+                {% for tag in page.tags %}
+                    {% assign t = tag | slugify %}
+                    <a class="chip" href="{{ site.jekyll-archives.permalinks.tag | prepend: site.baseurl | replace: ':name', t | replace: '//', '/' }}">{{ tag | capitalize }}</a>
+                {% endfor %}
+            </p>
+        {% endif %}
+        {% if page.image %}
+            <img src="{{ site.baseurl }}/assets/imgs/{{ page.image }}" id="feature-img">
+        {% else %}
+            <br>
+        {% endif %}
+    </div>
+</div>
+
+<div class="container content">
+    {{ content }}
+</div>

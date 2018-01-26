@@ -1,0 +1,357 @@
+// RESETS
+
+body, h1, h2, h3, h4, h5, h6,
+p, blockquote, pre, hr,
+dl, dd, ol, ul, figure {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+
+// MENU
+
+div.top-bar {
+  background-color: $brand-secondary;
+  display: flex;
+  align-items: stretch;
+  flex-shrink: 0;
+
+  div#logo {
+    letter-spacing: 2px;
+    padding: 6px $spacing-unit;
+    background-color: $brand-secondary-dark;
+    text-transform: uppercase;
+    font-weight: 200;
+    font-size: $spacing-unit;
+    a, a:hover, a:visited {
+      color: $light-text;
+      text-decoration: none;
+    }
+  }
+
+  div.nav {
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+    flex: 1;
+    margin-right: 0;
+    flex-direction: column;
+    @include for-tablet-landscape-up {
+      margin-right: 64px;
+      flex-direction: row;
+    }
+    a {
+      text-decoration: none;
+      padding: 4px $spacing-unit/2;
+      color: $light-text;
+      &:hover {
+        color: #fff;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+
+// HEADER IMAGE
+
+.header-image-container {
+  width: 100%;
+  max-height: 50vh;
+  overflow: hidden;
+  flex: 1 0 auto;
+  position: relative;
+  background-color: $brand-primary;
+  img.header-image {
+    width: 100%;
+  }
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    img {
+      max-height: 80%;
+      max-width: 30%;
+      margin: $spacing-unit;
+    }
+    > div {
+      margin-right: $spacing-unit/2;
+      h1 {
+        color: $white;
+        font-weight: 600;
+        line-height: 1.2em;
+        @include for-tablet-portrait-up {
+          letter-spacing: 3px;
+          font-size: 48px;
+        }
+        @include for-tablet-landscape-up {
+          letter-spacing: 4px;
+          font-size: 60px;
+        }
+      }
+      p {
+        color: $white;
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+
+// CONTAINERS
+
+div.container {
+  flex: 1 0 auto;
+  width: calc(100% - 64px);
+  max-width: $content-width;
+  margin: auto;
+  padding: 0 $spacing-unit;
+  &.content {
+    margin-top: $spacing-unit;
+    margin-bottom: $spacing-unit;
+  }
+  &.flex {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    @include for-tablet-landscape-up {
+      flex-direction: row-reverse;
+    }
+  }
+}
+
+
+// POST/PAGE FEATURE (TOP)
+
+h1.title {
+  margin-top: 0;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 56px;
+  font-weight: 600;
+}
+
+div#feature-block {
+  color: $light-text;
+  padding-top: $spacing-unit;
+  text-align: center;
+  //background-color: $brand-primary;
+  font-weight: 300;
+  h1.title {
+    color: $light-text;
+  }
+  .chip {
+    background-color: $brand-primary-light;
+    color: $light-text;
+    font-size: 14px;
+    &:hover {
+      background-color: $brand-primary-dark;
+    }
+    &:visited {
+      color: $light-text;
+    }
+  }
+  img#feature-img {
+    display: block;
+    width: 100%;
+    margin: auto;
+  }
+}
+
+// POST PREVIEW
+
+.dark-bg, #feature-block {
+  //background: linear-gradient($brand-primary-dark, $brand-primary);
+  background-color: $brand-primary;
+}
+
+.light-bg {
+  background-color: $gray-lightest;
+}
+
+ul.post-previews {
+  flex: 1 0 auto;
+  list-style: none;
+  margin: 0;
+  text-align: center;
+  @include for-tablet-landscape-up {
+    width: 65%;
+  }
+  li {
+    display: flex;
+    margin: 0;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    flex-direction: column;
+  }
+  div.post-content {
+    margin: $spacing-unit/2 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: $white;
+    img.feature {
+      width: 100%;
+      margin: auto;
+      display: block;
+      margin-top: $spacing-unit/4;
+    }
+    h1.title {
+      font-size: 28px;
+      margin-top: $spacing-unit/2;
+      a {
+        text-decoration: none;
+        &:visited {
+          color: $brand-secondary-light;
+        }
+      }
+    }
+    p.date {
+      color: $gray-light;
+      margin-top: 0;
+    }
+    div.post-intro {
+      text-align: left;
+      padding: 0 $spacing-unit/2;
+    }
+  }
+}
+
+
+// SIDEBAR
+
+div.sidebar {
+  > div {
+    background-color: white;
+    margin: $spacing-unit/2 0;
+    padding: $spacing-unit/2;
+  }
+
+  @include for-tablet-landscape-up {
+    width: 35%;
+    > div {
+      margin-left: $spacing-unit;
+    }
+  }
+}
+
+
+// PAGINATION
+
+.pagination {
+  .chip {
+    line-height: 2em;
+    width: 2em;
+    padding: 0;
+    background-color: $brand-primary;
+    color: $light-text;
+    margin: $spacing-unit/8;
+    &.active {
+      background: none;
+      color: $gray-light;
+    }
+    &:hover {
+      &:not(.active) {
+        background-color: $brand-primary-darker;
+      }
+    }
+    &:visited {
+      color: $light-text;
+    }
+  }
+}
+
+// CHIPS
+
+.center-chips {
+  text-align: center;
+}
+.chip {
+  display: inline-block;
+  background-color: $gray-lightest;
+  color: $gray-light;
+  font-size: $spacing-unit/2;
+  line-height: 2em;
+  border-radius: 1em;
+  padding: 0 $spacing-unit/2;
+  margin: $spacing-unit/4 $spacing-unit/2 $spacing-unit/4 0;
+  text-decoration: none;
+  &:hover {
+    background-color: $gray-lighter;
+    text-decoration: none;
+  }
+  &:visited {
+    color: $gray-light;
+  }
+  &.primary {
+    background-color: $brand-primary-light;
+    color: $light-text;
+    &:hover {
+      background-color: $brand-primary-dark;
+    }
+    &:visited {
+      color: $light-text;
+    }
+  }
+  &.secondary {
+    background-color: $brand-secondary-light;
+    color: $light-text;
+    &:hover {
+      background-color: $brand-secondary;
+    }
+    &:visited {
+      color: $light-text;
+    }
+  }
+}
+
+
+// FOOTER
+
+footer {
+  width: 100%;
+  background-color: $brand-primary;
+  flex-shrink: 0;
+  color: $light-text;
+  padding: $spacing-unit/2 0;
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    p.copyright {
+      margin: 0;
+    }
+    .nav {
+      margin-left: $spacing-unit;
+      display: inline-flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      @include for-phone-only {
+        flex-direction: column;
+      }
+      .chip {
+        margin-bottom: $spacing-unit/4;
+        margin-top: $spacing-unit/4;
+      }
+    }
+  }
+}

@@ -1,0 +1,71 @@
+// FONTS
+
+$base-font-family: Raleway, Helvetica, Arial, sans-serif;
+$base-font-size:   1em;
+$small-font-size:  $base-font-size * 0.875;
+$base-line-height: 1.5;
+
+$fixed-width-font-family: "Inconsolata", monospace;
+
+// COLORS
+
+$gray-base:              #000 !default;
+$gray-darker:            lighten($gray-base, 13.5%) !default; // #222
+$gray-dark:              lighten($gray-base, 20%) !default;   // #333
+$gray:                   lighten($gray-base, 33.5%) !default; // #555
+$gray-light:             lighten($gray-base, 46.7%) !default; // #777
+$gray-lighter:           lighten($gray-base, 76.7%) !default;
+$gray-lightest:          lighten($gray-base, 93.5%) !default; // #eee
+$white:                  #fff;
+
+$brand-primary:         #77878B;
+$brand-primary-light:   lighten($brand-primary, 10%);
+$brand-primary-dark:    darken($brand-primary, 5%);
+$brand-primary-darker:  darken($brand-primary, 25%);
+$brand-secondary:       #285c3e;
+$brand-secondary-light: lighten($brand-secondary, 10%);
+$brand-secondary-dark:  darken($brand-secondary, 10%);
+$brand-success:         #5cb85c !default;
+$brand-info:            #5bc0de !default;
+$brand-warning:         #f0ad4e !default;
+$brand-danger:          #d9534f !default;
+
+
+// THEME COLORS
+
+$background-color: $gray-lightest;
+$dark-background-color: $gray-darker;
+$foreground-color: $gray-lightest;
+$main-color: $brand-primary;
+$accent-color: $brand-secondary;
+
+$dark-text: $gray-darker;
+$light-text: $gray-lightest;
+$primary-text: $dark-text;
+
+
+// SIZING
+
+$content-width: 900px;
+$top-bar-height: 75px;
+
+$spacing-unit: 32px;
+
+
+// MEDIA QUERIES
+
+@mixin for-phone-only {
+  @media (max-width: 599px) { @content; }
+}
+@mixin for-tablet-portrait-up {
+  @media (min-width: 600px) { @content; }
+}
+@mixin for-tablet-landscape-up {
+  @media (min-width: 900px) { @content; }
+}
+@mixin for-desktop-up {
+  @media (min-width: 1200px) { @content; }
+}
+@mixin for-big-desktop-up {
+  @media (min-width: 1800px) { @content; }
+}

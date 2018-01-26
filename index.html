@@ -1,0 +1,83 @@
+---
+layout: default
+---
+
+<div class="header-image-container">
+    <img class="header-image" src="{{ site.baseurl}}/assets/imgs/pcb-green-2.jpg">
+    <div class="overlay">
+        <img src="{{ site.baseurl }}/assets/imgs/circuit-logo-light.png">
+        <div>
+            <h1>{{ site.title }}</h1>
+            <p>with {{ site.author }}</p>
+        </div>
+    </div>
+</div>
+
+<!--<div class="container content">
+    <h1>Hello, World</h1>
+</div>-->
+
+<div class="light-bg">
+<div class="container content flex">
+    <div class="sidebar">
+        <div class="post-content">
+            <h2 class="fw center">Hello, World.</h2>
+            <p>I'm a neuroscientist and (technically) an engineer by training. By day I work on robots; by night I work on cinnamon rolls and Lego.</p>
+            <p>I've let my writing lapse, so I am using this blog as a way to develop my voice, science writing skills, and a writing habit. But mostly, I get distracted by trying to make the website itself look nice.</p>
+        </div>
+    </div>
+    <ul class="post-previews">
+        {% for post in paginator.posts %}
+            <li>
+                <div class="post-content">
+                    <h1 class="title"><a href="{{ post.url }}">{{ post.title }}</a></h1>
+                    <p class="date">{{ post.date | date: "%Y %B %e" }}</p>
+
+                    {% if post.image %}
+                        <img src="{{ site.baseurl }}/assets/imgs/{{ post.image }}" class="feature">
+                    {% endif %}
+                    <div class="post-intro">
+                        {% if post.intro %}
+                            <p>{{ post.intro }}</p>
+                        {% else %}
+                            {{ post.excerpt }}
+                        {% endif %}
+                        <p class="center-chips">
+                            <a class="chip secondary" href="{{ post.url }}">Read More</a>
+                        </p>
+                    </div>
+                </div>
+            </li>
+        {% endfor %}
+        <div class="pagination">
+            <!-- Pagination links -->
+            {% if paginator.total_pages > 1 %}
+                <!-- Left arrow -->
+                {% if paginator.previous_page %}
+                    <a class="chip"
+                       href="{{ paginator.previous_page_path | replace: 'index.html', '/' | prepend: site.baseurl | replace: '//', '/' }}">&lsaquo;</a>
+                {% endif %}
+                <!-- Page numbers -->
+                {% for page in (1..paginator.total_pages) %}
+                    {% if page == paginator.page %}
+                        <a class="chip active">{{ page }}</a>
+                    {% elsif page == 1 %}
+                        <a class="chip"
+                           href="{{ '/' | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a>
+                    {% else %}
+                        <a class="chip"
+                           href="{{ site.paginate_path | prepend: '/' | prepend: site.baseurl | replace: ':num', page | replace: '//', '/' }}">{{ page }}</a>
+                    {% endif %}
+                {% endfor %}
+
+                <!-- Right arrow -->
+                {% if paginator.next_page %}
+                    <a class="chip"
+                       href="{{ paginator.next_page_path | prepend: site.baseurl }}">&rsaquo;</a>
+                {% endif %}
+            {% endif %}
+        </div>
+    </ul>
+
+</div>
+</div>

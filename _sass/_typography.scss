@@ -1,0 +1,145 @@
+// For formatting text WITHIN posts
+
+
+.fw {
+  font-family: $fixed-width-font-family;
+}
+
+.center {
+  text-align: center;
+}
+
+// Headers
+
+p, li {
+  font-size: $spacing-unit/2;
+}
+
+p {
+  margin: $spacing-unit/2 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  clear: both;
+  font-weight: 300;
+}
+
+h1 {
+  margin-top: $spacing-unit;
+  font-size: 34px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: $brand-secondary;
+  letter-spacing: 3px;
+}
+
+h2 {
+  margin-top: $spacing-unit/2;
+  font-size: 24px;
+  color: $brand-secondary;
+  letter-spacing: 2px;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: 500;
+  color: $brand-secondary;
+  letter-spacing: 1px
+}
+
+h4 {
+  font-size: $spacing-unit/2;
+  font-weight: 400;
+}
+
+h5 {
+  font-weight: 500;
+}
+
+h6 {
+  font-weight: 400;
+}
+
+// Images (using Luminous)
+
+a img, img {
+  max-width: 100%;
+  @include for-tablet-portrait-up {
+    &.left {
+      max-width: 48%;
+      float: left;
+      margin: 0 2% $spacing-unit/2 0;
+    }
+    &.right {
+      max-width: 48%;
+      float: right;
+      margin: 0 0 $spacing-unit/2 2%;
+    }
+  }
+
+}
+
+// Tables
+
+table {
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+  margin: $spacing-unit 0;
+  th {
+    border-bottom: 1px solid $gray-light;
+  }
+  td, th {
+    padding: $spacing-unit/2 5px;
+  }
+}
+
+
+// Breaks
+
+hr {
+  margin: $spacing-unit/2 0;
+  display: block;
+  border: none;
+  background-color: $gray-lighter;
+  height: 1px;
+  border: 0;
+}
+
+
+// Blockquotes
+
+blockquote {
+  color: $gray;
+  border-left: 4px solid $brand-primary;
+  padding-left: $spacing-unit / 2;
+  font-size: 18px;
+
+  > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+// Definitions
+
+dl {
+  line-height: 1.5em;
+  dd {
+    margin-left: $spacing-unit;
+  }
+}
+
+
+// LINKS
+
+a {
+  color: $brand-secondary-light;
+
+  &:visited {
+    color: $brand-secondary;
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
